@@ -1,0 +1,159 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Login System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Secure Login System</h1>
+        <p>Account Authentication Portal</p>
+    </header>
+
+    <main class="container">
+
+        <!-- Registration Form -->
+        <section class="card" id="registerSection">
+            <h2>Create Account</h2>
+
+            <form id="registerForm">
+                <label for="regName">Full Name</label>
+                <input
+                    type="text"
+                    id="regName"
+                    placeholder="Enter your name"
+                    autocomplete="name"
+                    required
+                >
+
+                <label for="regEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="regEmail"
+                    placeholder="Enter your email"
+                    autocomplete="email"
+                    required
+                >
+
+                <label for="regPassword">Password</label>
+
+                <div class="password-box">
+                    <input
+                        type="password"
+                        id="regPassword"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        minlength="8"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="toggle"
+                        data-target="regPassword"
+                    >Show</button>
+                </div>
+
+                <div class="strength-track">
+                    <div id="strengthBar"></div>
+                </div>
+
+                <p id="strengthText">Password strength: Not checked</p>
+
+                <label for="confirmPassword">Confirm Password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm your password"
+                    autocomplete="new-password"
+                    required
+                >
+
+                <button type="submit" class="primary">
+                    Register
+                </button>
+            </form>
+
+            <p class="switch">
+                Already have an account?
+                <button type="button" id="showLogin">Login</button>
+            </p>
+        </section>
+
+        <!-- Login Form -->
+        <section class="card" id="loginSection" hidden>
+            <h2>Welcome Back</h2>
+
+            <form id="loginForm">
+                <label for="loginEmail">Email Address</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="loginPassword">Password</label>
+
+                <div class="password-box">
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="toggle"
+                        data-target="loginPassword"
+                    >Show</button>
+                </div>
+
+                <button type="submit" class="primary">
+                    Login
+                </button>
+            </form>
+
+            <p class="switch">
+                Don't have an account?
+                <button type="button" id="showRegister">Register</button>
+            </p>
+        </section>
+
+        <!-- Dashboard -->
+        <section class="card dashboard" id="dashboardSection" hidden>
+            <h2>Login Successful!</h2>
+
+            <p>Welcome, <strong id="welcomeName"></strong>.</p>
+
+            <p>You have entered the demo dashboard.</p>
+
+            <button type="button" id="logoutButton" class="logout">
+                Logout
+            </button>
+        </section>
+
+        <div id="message" role="status" aria-live="polite"></div>
+
+        <p class="disclaimer">
+            Demonstration project only. Do not enter real passwords.
+            This frontend does not provide secure server authentication.
+        </p>
+
+    </main>
+
+    <footer>
+        <p>Secure Login System | HTML, CSS & JavaScript</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
